@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SENTIMENT ALALYSIS</title>
+</head>
+<body>
+
+    <form action="/perform_sa" method="post">
+        <label style="color:blue">type your text here</label><br><br>
+        <textarea name="sa_text"></textarea><br><br>
+        <input type="submit" value="perform SENTIMENT ALALYSIS">
+    </form><br><br>
+
+
+    {% if response %}
+        <h2>Sentimental Analysis Result:</h2>
+        <ul>
+            {% for item in response %}
+                <li>{{ item }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+</body>
+</html>
